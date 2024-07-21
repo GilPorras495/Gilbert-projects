@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="JavaScript/code.js"></script>
+    <title>Barca</title>
+</head>
+<body>
+    <style>
+        body{
+            background: black;
+            display: flex;
+            flex-direction: column;
+            -ms-flex-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <section id = "imagen">
+        <h1>Congrats Champion</h1>
+        <style>
+            h1{
+                color: blue;
+                font-family:'Courier New', Courier, monospace;
+                text-align: center;
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+        <button onclick="PrintMensaje()" id="mensaje">
+            <article>
+                <img src="imagenes/escudo del barca.jpeg" alt="">
+                <img src="imagenes/Gavi.jpg" alt="">
+            </article>
+            <style>
+                article{
+                    position: relative;
+                    width: 500px;
+                    transition: all .3s ease;
+                }
+        
+                article img:first-child{
+                    box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
+                    border-radius: 4px;
+                    object-fit: cover;
+                    width: 100%;
+                }
+        
+                article img:last-child{
+                    position: absolute;
+                    width: 450px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    transform: translateY(25%);
+                    transition: .3s ease;
+                    opacity: 0;
+                }
+        
+                article:hover{
+                    transform: 
+                        perspective(250px)
+                        rotateX(10deg)
+                        translateY(-5%)
+                        translateZ(0);
+                }
+        
+                article::before{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-image: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0) 95%);
+                    opacity: 0;
+                    transition: all .3s ease;
+                }
+        
+                article:hover::before{
+                    opacity: 1;
+                }
+        
+                article:hover img:last-child{
+                    opacity: 1;
+                    transform: translateY(10%);
+                }
+            </style>
+        </button>
+    </section>
+</body>
+</html>
